@@ -1,4 +1,5 @@
 export interface TypographyProps {
+  className?: string;
   children: React.ReactNode;
   variant?: TypographyVariant;
   color?: TypographyColor;
@@ -23,7 +24,7 @@ export type TypographyVariant =
   | 'body2'
   | 'caption'
   | 'overline';
-  
+
 export type TypographyColor = 'initial' | 'inherit' | 'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error';
 export type TypographyAlign = 'left' | 'center' | 'right' | 'justify';
 export type TypographyWeight = 'normal' | 'bold' | 'bolder' | 'lighter';

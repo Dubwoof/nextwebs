@@ -8,13 +8,56 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: hsl(210, 10%, 15%);
-  background-color: #fff;
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(217.2, 32.6%, 17.5%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'ComfortaaLight';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('Comfortaa-Light'),
+    url('@/assets/fonts/Comfortaa-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/Comfortaa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ComfortaaMedium';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Comfortaa-Medium'),
+    url('@/assets/fonts/Comfortaa-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ComfortaaSemiBold';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Comfortaa-SemiBold'),
+    url('@/assets/fonts/Comfortaa-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ComfortaaBold';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Comfortaa-Bold'),
+    url('@/assets/fonts/Comfortaa-Bold.ttf') format('truetype');
 }
 
 a {

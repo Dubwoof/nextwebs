@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Navigation } from './elements/Navigation/Navigation';
+import { NotFound } from './pages/NotFound/NotFound';
+import { Home } from './pages/Home/Home';
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function WrappedApp() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-    </div>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   );
 }
 
-export default App;
+function App() {
+  return (
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* 👈 Renders at /app/ */}
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </>
+  );
+}

@@ -8,9 +8,9 @@ export function Home({}: PageProps): JSX.Element {
       <Typography variant="overline" transform="uppercase">
         Welcome to Nextwebs
       </Typography>
-      <Typography variant="h1" className="flex">
+      <Typography variant="h1">
         Enthusiastic Software Engineering to Build a Connected&nbsp;
-        <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">&#123;World&#125;</div>.
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">&#123;World&#125;</span>.
       </Typography>
     </div>
   );

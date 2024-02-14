@@ -4,7 +4,7 @@ export function Typography({ variant, children, className }: TypographyProps): J
   if (variant === 'overline') {
     return (
       <p
-        className={`w-full text-6xl font-robotoBold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-green-300 text-start lg:text-8xl ${className}`}
+        className={`w-full text-6xl font-robotoBold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-green-500 text-start lg:text-8xl ${className}`}
       >
         {children}
       </p>

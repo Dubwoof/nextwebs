@@ -10,7 +10,7 @@ export function Home({}: PageProps): JSX.Element {
       </Typography>
       <Typography variant="h1">
         Enthusiastic Software Engineering to Build a Connected&nbsp;
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">&#123;World&#125;</span>.
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-green-300">&#123;World&#125;</span>.
       </Typography>
     </div>
   );

@@ -1,9 +1,6 @@
 import { JSX } from 'react';
+import { styles } from './Logo.styles';
 
 export function Logo(): JSX.Element {
-  return (
-    <>
-      <h1>Logo</h1>
-    </>
-  );
+  return <div className={styles.logo}>Nextwebs</div>;
 }

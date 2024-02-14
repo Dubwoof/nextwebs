@@ -3,13 +3,24 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-primary: #9082e3;
+  --color-secondary: #ff8800;
+  --color-background: hsl(217.2, 32.6%, 17.5%);
+  --color-card: #ffffff;
+  --color-text: hsl(0, 100%, 100%);
+  --color-text-secondary: #ffffff;
+  --color-text-light: #707070;
+  --color-text-lighter: #404040;
+  --font-family: 'Comfortaa-Regular', sans-serif;
+  --font-family-bold: 'Comfortaa-Bold', sans-serif;
+
+  font-family: var(--font-family);
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: hsl(0, 100%, 100%);
-  background-color: hsl(217.2, 32.6%, 17.5%);
+  color: var(--color-text);
+  background-color: var(--color-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +29,7 @@
 }
 
 @font-face {
-  font-family: 'ComfortaaLight';
+  font-family: 'Comfortaa-Light';
   font-style: normal;
   font-weight: 300;
   src:
@@ -27,14 +38,16 @@
 }
 
 @font-face {
-  font-family: 'Comfortaa';
+  font-family: 'Comfortaa-Regular';
   font-style: normal;
   font-weight: 400;
-  src: url('@/assets/fonts/Comfortaa-Regular.ttf') format('truetype');
+  src:
+    local('Comfortaa-Regular'),
+    url('./assets/fonts/Comfortaa-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'ComfortaaMedium';
+  font-family: 'Comfortaa-Medium';
   font-style: normal;
   font-weight: 500;
   src:
@@ -43,7 +56,7 @@
 }
 
 @font-face {
-  font-family: 'ComfortaaSemiBold';
+  font-family: 'Comfortaa-SemiBold';
   font-style: normal;
   font-weight: 600;
   src:
@@ -52,12 +65,18 @@
 }
 
 @font-face {
-  font-family: 'ComfortaaBold';
+  font-family: 'Comfortaa-Bold';
   font-style: normal;
   font-weight: 700;
   src:
     local('Comfortaa-Bold'),
-    url('@/assets/fonts/Comfortaa-Bold.ttf') format('truetype');
+    url('./assets/fonts/Comfortaa-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SpaceMono-Regular';
+  font-style: normal;
+  font-weight: 400;
 }
 
 a {
@@ -78,8 +97,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: var(--font-family-bold);
+  font-size: 2.5rem;
 }
 
 button {

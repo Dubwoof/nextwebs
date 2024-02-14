@@ -1,3 +1,5 @@
+import { TypographyProps } from "./Typography.types";
+
 export function Typography({}: TypographyProps): JSX.Element {
   return (
     <div>

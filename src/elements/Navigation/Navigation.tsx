@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { NavigationProps } from './Navigation.props';
+import { NavigationProps } from './Navigation.types';
 import { styles } from './Navigation.styles';
 
 export function Navigation({}: NavigationProps): JSX.Element {

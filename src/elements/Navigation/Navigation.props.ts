@@ -1,3 +1,6 @@
+import { ReactNode } from 'react';
+
 export interface NavigationProps {
-    // toggleTheme: () => void;
+  logo: ReactNode;
+  // toggleTheme: () => void;
 }

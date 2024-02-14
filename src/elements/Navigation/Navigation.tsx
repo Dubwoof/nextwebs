@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import { NavigationProps } from './Navigation.props';
 import { styles } from './Navigation.styles';
 

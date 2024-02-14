@@ -16,7 +16,7 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home />} /> {/* 👈 Renders at /app/ */}
+        <Route path="/" element={<Home />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </>

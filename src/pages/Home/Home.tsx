@@ -4,7 +4,7 @@ import { Typography } from '../../elements/Typography/Typography';
 
 export function Home({}: PageProps): JSX.Element {
   return (
-    <div>
+    <div className="px-4">
       <Typography variant="overline" transform="uppercase">
         Welcome to Nextwebs
       </Typography>

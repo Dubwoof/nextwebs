@@ -15,6 +15,10 @@ export function Typography({ variant, children, className }: TypographyProps): J
     return <h1 className={`text-xl font-robotoBold text-start lg:text-3xl ${className}`}>{children}</h1>;
   }
 
+  if (variant === 'caption') {
+    return <p className={`text-xs font-robotoRegular text-start lg:text-sm ${className}`}>{children}</p>;
+  }
+
   return (
     <div>
       <h1>Hello world</h1>

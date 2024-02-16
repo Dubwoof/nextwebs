@@ -3,6 +3,16 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        textColor: 'var(--color-text)',
+      },
+      maxWidth: {
+        navWidth: '1000px',
+      },
+      width: {
+        navWidth: '1000px',
+      },
       fontFamily: {
         comfortaaLight: ['Comfortaa-Light'],
         comfortaaRegular: ['Comfortaa-Regular'],

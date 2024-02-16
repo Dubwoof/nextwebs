@@ -1,3 +1,3 @@
 export const styles = {
-  logo: 'text-xl font-comfortaaBold text-primary',
+  logo: 'text-xl font-comfortaaBold text-text',
 };

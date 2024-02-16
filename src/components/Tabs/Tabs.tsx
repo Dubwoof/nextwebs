@@ -16,6 +16,10 @@ interface TabsProps {
   direction?: 'row' | 'col';
 }
 
+const styles = {
+  stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square hover:bg-slate-700',
+};
+
 /*
 <Tabs>
     <Tab>
@@ -92,45 +96,47 @@ export function Tabs({ direction = 'col' }: TabsProps): JSX.Element {
               Application & Data
             </Typography>
             <div className="grid grid-cols-6 gap-8">
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={reactLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">React</Typography>
               </div>
 
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={typescriptLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">TypeScript</Typography>
               </div>
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={javascriptLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">JavaScript</Typography>
               </div>
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={nextjsLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">NextJS</Typography>
               </div>
 
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={cypressLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">Cypress</Typography>
               </div>
 
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={viteLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">Vite</Typography>
               </div>
 
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={postmanLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">Postman</Typography>
               </div>
 
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={html5Logo} alt="React" width={60} height={60} />
                 <Typography variant="caption">HTML 5</Typography>
               </div>
 
-              <div className="flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square">
+              <div className={styles.stackItem}>
                 <img className="rounded-md" src={css3Logo} alt="React" width={60} height={60} />
                 <Typography variant="caption">CSS 3</Typography>
               </div>

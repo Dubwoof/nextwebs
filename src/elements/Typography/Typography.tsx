@@ -18,7 +18,7 @@ export function Typography({ variant, children, className, transform }: Typograp
   if (variant === 'overline') {
     return (
       <p
-        className={`w-full text-3xl font-robotoBold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-green-500 text-start lg:text-6xl ${className}`}
+        className={`w-full text-3xl font-robotoBold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-green-500 lg:text-6xl ${className}`}
       >
         {transformedChildren}
       </p>
@@ -26,16 +26,20 @@ export function Typography({ variant, children, className, transform }: Typograp
   }
 
   if (variant === 'h1') {
-    return <h1 className={`text-xl font-robotoBold text-start lg:text-3xl ${className}`}>{transformedChildren}</h1>;
+    return <h1 className={`text-xl font-robotoBold lg:text-3xl ${className}`}>{transformedChildren}</h1>;
+  }
+
+  if (variant === 'h2') {
+    return <h2 className={`text-lg font-robotoBold lg:text-2xl ${className}`}>{transformedChildren}</h2>;
+  }
+
+  if (variant === 'subtitle1') {
+    return <p className={`text-base font-robotoRegular lg:text-lg ${className}`}>{transformedChildren}</p>;
   }
 
   if (variant === 'caption') {
-    return <p className={`text-xs font-robotoRegular text-start lg:text-sm ${className}`}>{transformedChildren}</p>;
+    return <p className={`text-xs font-robotoRegular lg:text-sm ${className}`}>{transformedChildren}</p>;
   }
 
-  return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
-  );
+  return <p className={`text-base font-robotoRegular lg:text-lg ${className}`}>{transformedChildren}</p>;
 }

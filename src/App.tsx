@@ -16,10 +16,11 @@ export default function WrappedApp(): JSX.Element {
 }
 
 const routes: NavigationRoute[] = [
-  { label: 'Contact', path: '/contact', isPrimary: true },
-  { label: 'Components', path: '/blog' },
+  { label: 'Components', path: '/components' },
+  { label: 'About', path: '/about' },
   { label: 'Tools', path: '/tools' },
   { label: 'Login', path: '/login' },
+  { label: 'Contact', path: '/contact', isPrimary: true },
 ];
 
 function App() {

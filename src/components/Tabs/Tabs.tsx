@@ -11,6 +11,7 @@ import css3Logo from '../../assets/stack/css3.png';
 import typescriptLogo from '../../assets/stack/typescript.jpeg';
 import viteLogo from '../../assets/stack/vite.png';
 import postmanLogo from '../../assets/stack/postman.png';
+import { NxLogo } from '../../elements/NxLogo/NxLogo';
 
 interface TabsProps {
   direction?: 'row' | 'col';
@@ -134,6 +135,11 @@ export function Tabs({ direction = 'col' }: TabsProps): JSX.Element {
               <div className={styles.stackItem}>
                 <img className="rounded-md" src={html5Logo} alt="React" width={60} height={60} />
                 <Typography variant="caption">HTML 5</Typography>
+              </div>
+
+              <div className={styles.stackItem}>
+                <NxLogo />
+                <Typography variant="caption">NX</Typography>
               </div>
 
               <div className={styles.stackItem}>

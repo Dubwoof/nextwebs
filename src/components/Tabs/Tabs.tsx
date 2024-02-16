@@ -48,7 +48,7 @@ export function Tabs({ direction = 'col' }: TabsProps): JSX.Element {
               Hi, I'm Artur, a Software Engineer.
             </Typography>
             <Typography className="mb-8">
-              I'm a software engineer with a passion for web development. With more 4+ years of experience in the field, I have worked on a
+              I'm a software engineer with a passion for web development. With 4+ years of experience in the field, I have worked on a
               variety of projects, from small business websites to large-scale web applications. I'm always looking for new challenges and
               opportunities to grow and improve my skills.
             </Typography>

@@ -33,6 +33,10 @@ export function Typography({ variant, children, className, transform }: Typograp
     return <h2 className={`text-lg font-robotoBold lg:text-2xl ${className}`}>{transformedChildren}</h2>;
   }
 
+  if (variant === 'h3') {
+    return <h3 className={`text-base font-robotoBold lg:text-lg ${className}`}>{transformedChildren}</h3>;
+  }
+
   if (variant === 'subtitle1') {
     return <p className={`text-base font-robotoRegular lg:text-lg ${className}`}>{transformedChildren}</p>;
   }

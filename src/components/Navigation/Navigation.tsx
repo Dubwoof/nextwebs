@@ -9,8 +9,8 @@ export function Navigation({ logo, routes }: NavigationProps): JSX.Element {
       <div className={styles.navLine}>
         {logo}
         <div className={styles.textLinks}>
-          {routes.map(route => {
-            return <Button isPrimary={route.isPrimary}>{route.label}</Button>;
+          {routes.map((route, index) => {
+            return <Button key={index} isPrimary={route.isPrimary}>{route.label}</Button>;
           })}
         </div>
         <div className={styles.icons}>{/* {icon links} */}</div>

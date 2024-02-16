@@ -1,0 +1,6 @@
+.react-icon-gradient {
+  background: linear-gradient(to bottom right, #00f, #0f0); /* Example gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

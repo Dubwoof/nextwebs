@@ -12,13 +12,18 @@ import typescriptLogo from '../../assets/stack/typescript.jpeg';
 import viteLogo from '../../assets/stack/vite.png';
 import postmanLogo from '../../assets/stack/postman.png';
 import { NxLogo } from '../../elements/NxLogo/NxLogo';
+import nstjsLogo from '../../assets/stack/nestjs.jpeg';
+import nodejsLogo from '../../assets/stack/nodejs.png';
+import rustLogo from '../../assets/stack/rust.png';
+import cn from 'classnames';
 
 interface TabsProps {
   direction?: 'row' | 'col';
 }
 
 const styles = {
-  stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl aspect-square hover:bg-slate-700',
+  stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl hover:bg-slate-700 w-24 h-24',
+  invisible: 'invisible',
 };
 
 /*
@@ -96,56 +101,85 @@ export function Tabs({ direction = 'col' }: TabsProps): JSX.Element {
             <Typography variant="subtitle1" className="mb-4">
               Application & Data
             </Typography>
-            <div className="grid grid-cols-6 gap-8">
+            <div className="flex justify-between mb-8">
               <div className={styles.stackItem}>
                 <img className="rounded-md" src={reactLogo} alt="React" width={60} height={60} />
                 <Typography variant="caption">React</Typography>
               </div>
 
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={typescriptLogo} alt="React" width={60} height={60} />
+                <img className="rounded-md" src={typescriptLogo} alt="TypeScript" width={60} height={60} />
                 <Typography variant="caption">TypeScript</Typography>
               </div>
 
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={javascriptLogo} alt="React" width={60} height={60} />
+                <img className="rounded-md" src={javascriptLogo} alt="JavaScript" width={60} height={60} />
                 <Typography variant="caption">JavaScript</Typography>
               </div>
 
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={nextjsLogo} alt="React" width={60} height={60} />
+                <img className="rounded-md" src={nextjsLogo} alt="NextJS" width={60} height={60} />
                 <Typography variant="caption">NextJS</Typography>
               </div>
 
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={cypressLogo} alt="React" width={60} height={60} />
+                <img className="rounded-md" src={cypressLogo} alt="Cypress" width={60} height={60} />
                 <Typography variant="caption">Cypress</Typography>
               </div>
 
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={viteLogo} alt="React" width={60} height={60} />
+                <img className="rounded-md" src={viteLogo} alt="Vite" width={60} height={60} />
                 <Typography variant="caption">Vite</Typography>
               </div>
+            </div>
 
+            <div className="flex justify-between mb-8">
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={postmanLogo} alt="React" width={60} height={60} />
+                <img className="rounded-md" src={postmanLogo} alt="Postman" width={60} height={60} />
                 <Typography variant="caption">Postman</Typography>
               </div>
 
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={html5Logo} alt="React" width={60} height={60} />
+                <img className="rounded-md" src={nodejsLogo} alt="NodeJS" width={60} height={60} />
+                <Typography variant="caption">NodeJS</Typography>
+              </div>
+
+              <div className={styles.stackItem}>
+                <img className="rounded-md" src={html5Logo} alt="HTML 5" width={60} height={60} />
                 <Typography variant="caption">HTML 5</Typography>
               </div>
 
               <div className={styles.stackItem}>
+                <img className="rounded-md" src={css3Logo} alt="CSS 3" width={60} height={60} />
+                <Typography variant="caption">CSS 3</Typography>
+              </div>
+
+              <div className={cn(styles.stackItem, styles.invisible)}></div>
+              <div className={cn(styles.stackItem, styles.invisible)}></div>
+            </div>
+
+            <Typography variant="subtitle1" className="mb-4">
+              In Progress
+            </Typography>
+            <div className="flex justify-between mb-8">
+              <div className={styles.stackItem}>
                 <NxLogo />
-                <Typography variant="caption">NX</Typography>
+                <Typography variant="caption">Nx</Typography>
               </div>
 
               <div className={styles.stackItem}>
-                <img className="rounded-md" src={css3Logo} alt="React" width={60} height={60} />
-                <Typography variant="caption">CSS 3</Typography>
+                <img className="rounded-md" src={nstjsLogo} alt="NestJS" width={60} height={60} />
+                <Typography variant="caption">NestJS</Typography>
               </div>
+
+              <div className={styles.stackItem}>
+                <img className="rounded-md" src={rustLogo} alt="React" width={60} height={60} />
+                <Typography variant="caption">Rust</Typography>
+              </div>
+
+              <div className={cn(styles.stackItem, styles.invisible)}></div>
+              <div className={cn(styles.stackItem, styles.invisible)}></div>
+              <div className={cn(styles.stackItem, styles.invisible)}></div>
             </div>
           </div>
         </div>

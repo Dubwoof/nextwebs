@@ -18,7 +18,7 @@ function Tabs({ children }: TabsProps) {
                 isPrimary={tabIndex === activeTab}
                 key={`title_${tabIndex}_${index}`}
                 onClick={() => setActiveTab(tabIndex)}
-                className="cursor-pointer"
+                className="cursor-pointer text-start"
               >
                 {tabChild}
               </Button>,

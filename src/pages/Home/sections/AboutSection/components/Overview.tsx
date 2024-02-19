@@ -37,19 +37,19 @@ export function Overview(): JSX.Element {
       </Typography>
 
       <div className="flex gap-8 mb-8">
-        <div className="flex bg-slate-600 hover:bg-slate-700 p-3 rounded-xl gap-3 items-center justify-start">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center justify-start">
           <Typography variant="overline" className="w-min">
             {calculateYearsFromDate('2019-07-01')}+
           </Typography>
           <div className="">years of experience</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 p-3 rounded-xl gap-3 items-center">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center">
           <ReactLogo />
-          <div className="">years of experience</div>
+          <div className="">react professional</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 p-3 rounded-xl gap-3 items-center">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center">
           <Typography variant="overline" className="w-min">
             4+
           </Typography>

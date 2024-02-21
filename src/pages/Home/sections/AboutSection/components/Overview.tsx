@@ -103,7 +103,7 @@ export function Overview(): JSX.Element {
           if (item.category === 'inProgress') {
             return (
               <div key={index} className={styles.stackItem}>
-                <img src={item.logo} alt={item.name} width={60} height={60} />
+                <img className="rounded-md" src={item.logo} alt={item.name} width={60} height={60} />
                 <Typography variant="caption">{item.name}</Typography>
               </div>
             );

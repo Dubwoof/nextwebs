@@ -1,4 +1,3 @@
-import { ReactLogo } from '../../../../../elements/ReactLogo/ReactLogo';
 import { Typography } from '../../../../../elements/Typography/Typography';
 import { calculateYearsFromDate } from '../../../../../utils/calculateYearsFromDate';
 import reactLogo from '../../../../../assets/stack/react.png';

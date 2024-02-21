@@ -9,10 +9,11 @@ function Tabs({ children }: TabsProps): JSX.Element {
 
   Children.forEach(children, (child, tabIndex) => {
     if (isValidElement(child)) {
-      Children.forEach(child.props.children, (tabChild, index) => {
+      Children.forEach(children, (tabChild, index) => {
         if (isValidElement(tabChild)) {
           const typeName = typeof tabChild.type === 'function' ? tabChild.type.name : '';
           if (typeName === 'TabTitle') {
+            console.log('tabChild', tabChild);
             titles.push(
               <Button
                 isPrimary={tabIndex === activeTab}
@@ -24,9 +25,12 @@ function Tabs({ children }: TabsProps): JSX.Element {
               </Button>,
             );
           } else if (typeName === 'TabContent') {
+            console.log('tabChild', tabChild);
             contents.push(tabChild);
           }
+          console.log('not matching', tabChild.type);
         }
+        console.log('no valid element', tabChild);
       });
     }
   });

@@ -5,6 +5,7 @@ import { Tab, Tabs } from '../../../../components/Tabs/Tabs';
 import { Overview } from './components/Overview';
 import { Typography } from '../../../../elements/Typography/Typography';
 import { Projects } from './components/Projects';
+import { Products } from './components/Products';
 
 export function AboutSection(): JSX.Element {
   return (
@@ -19,7 +20,7 @@ export function AboutSection(): JSX.Element {
               <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
             <Tab label="Products">
-              <Typography variant="overline">COMING SOON!</Typography>
+              <Products />
             </Tab>
             <Tab label="Projects">
               <Projects />

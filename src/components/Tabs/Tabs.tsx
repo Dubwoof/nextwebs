@@ -27,8 +27,9 @@ function Tabs({ children }: TabsProps): JSX.Element {
           } else if (typeName === 'TabContent') {
             console.log('tabChild', tabChild);
             contents.push(tabChild);
+          } else {
+            console.log('no valid element', tabChild);
           }
-          console.log('not matching', tabChild.type);
         }
         console.log('no valid element', tabChild);
       });

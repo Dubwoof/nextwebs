@@ -4,6 +4,7 @@ import { NavWidth } from '../../../../layouts/NavWidth';
 import { Tab, Tabs } from '../../../../components/Tabs/Tabs';
 import { Overview } from './components/Overview';
 import { Typography } from '../../../../elements/Typography/Typography';
+import { Projects } from './components/Projects';
 
 export function AboutSection(): JSX.Element {
   return (
@@ -21,7 +22,7 @@ export function AboutSection(): JSX.Element {
               <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
             <Tab label="Projects">
-              <Typography variant="overline">COMING SOON!</Typography>
+              <Projects />
             </Tab>
           </Tabs>
         </div>

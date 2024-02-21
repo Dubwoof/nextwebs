@@ -7,6 +7,13 @@ import { BiChevronDown } from 'react-icons/bi';
 import { Colors } from '../../../constants/Colors.enum';
 
 export function WelcomeSection(): JSX.Element {
+  function changeTab() {
+    const changeTabEvent = new CustomEvent<number>('changeTab', {
+      detail: 0,
+    });
+    window.dispatchEvent(changeTabEvent);
+  }
+
   return (
     <Section>
       <NavWidth>
@@ -24,7 +31,7 @@ export function WelcomeSection(): JSX.Element {
           </Typography>
           <div className="flex gap-8 justify-center mb-16">
             <Button isPrimary>Contact</Button>
-            <Button>About Me</Button>
+            <Button onClick={changeTab}>About Me</Button>
           </div>
           <BiChevronDown size={60} color={Colors.TextLight} className="cursor-pointer" />
         </div>

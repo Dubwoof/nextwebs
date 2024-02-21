@@ -17,7 +17,7 @@ import metaLogo from '../../../../../assets/meta.png';
 
 const styles = {
   stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl hover:bg-slate-700 w-24 h-24 select-none',
-  invisible: 'invisible',
+  grid: 'grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-8',
 };
 
 interface StackItem {
@@ -82,7 +82,7 @@ export function Overview(): JSX.Element {
       <Typography variant="subtitle1" className="mb-4">
         Application & Data
       </Typography>
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
+      <div className={styles.grid}>
         {stack.map((item, index) => {
           if (item.category === 'applicationAndData') {
             return (
@@ -98,7 +98,7 @@ export function Overview(): JSX.Element {
       <Typography variant="subtitle1" className="mb-4">
         In Progress
       </Typography>
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
+      <div className={styles.grid}>
         {stack.map((item, index) => {
           if (item.category === 'inProgress') {
             return (

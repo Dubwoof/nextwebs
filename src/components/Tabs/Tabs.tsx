@@ -40,7 +40,7 @@ function Tabs({ children }: TabsProps): JSX.Element {
 }
 
 function Tab({ children }: TabProps): JSX.Element {
-  return <div className="tab">{children}</div>;
+  return <div>{children}</div>;
 }
 
 function TabTitle({ children }: TabTitleProps): JSX.Element {

@@ -9,7 +9,7 @@ function Tabs({ children }: TabsProps): JSX.Element {
 
   Children.forEach(children, (child, tabIndex) => {
     if (isValidElement(child)) {
-      Children.forEach(children, (tabChild, index) => {
+      Children.forEach(child.props.children, (tabChild, index) => {
         if (isValidElement(tabChild)) {
           const typeName = typeof tabChild.type === 'function' ? tabChild.type.name : '';
           if (typeName === 'TabTitle') {

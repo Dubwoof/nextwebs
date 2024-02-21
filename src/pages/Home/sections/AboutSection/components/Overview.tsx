@@ -58,19 +58,19 @@ export function Overview(): JSX.Element {
       </Typography>
 
       <div className="flex flex-col md:flex-row gap-4 md:gap-8 mb-8">
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center justify-start md:w-1/3 select-none">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center justify-start md:w-1/3 select-none h-14 md:h-20">
           <Typography variant="overline" className="w-min">
             {calculateYearsFromDate('2019-07-01')}+
           </Typography>
           <div className="">years of experience</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center md:w-1/3 select-none">
-          <img className="rounded-md" src={metaLogo} alt="Meta" width={60} height={60} />
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center md:w-1/3 select-none h-14 md:h-20">
+          <img className="object-cover aspect-square" src={metaLogo} alt="Meta" width={32} height={32} />
           <div className="">Advanced React Certificate</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center md:w-1/3 select-none">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center md:w-1/3 select-none h-14 md:h-20">
           <Typography variant="overline" className="w-min">
             4+
           </Typography>
@@ -87,7 +87,7 @@ export function Overview(): JSX.Element {
           if (item.category === 'applicationAndData') {
             return (
               <div key={index} className={styles.stackItem}>
-                <img src={item.logo} alt={item.name} width={60} height={60} />
+                <img className="rounded-md" src={item.logo} alt={item.name} width={60} height={60} />
                 <Typography variant="caption">{item.name}</Typography>
               </div>
             );

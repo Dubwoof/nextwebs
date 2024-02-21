@@ -10,7 +10,7 @@ export function WelcomeSection(): JSX.Element {
   return (
     <Section>
       <NavWidth>
-        <div className="flex flex-col justify-center text-center items-center min-h-[70vh]">
+        <div className="flex flex-col justify-center text-center items-center min-h-[70vh] px-4 lg:px-0">
           <Typography variant="overline" transform="uppercase">
             welcome to nextwebs
           </Typography>

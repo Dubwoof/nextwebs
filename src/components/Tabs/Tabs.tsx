@@ -34,10 +34,10 @@ function Tabs({ children }: TabsProps): JSX.Element {
 
   return (
     <div ref={tabsRef} className="flex gap-8">
-      <div className="flex flex-col gap-4 cursor-pointer" data-id="tabTitlesCol">
+      <div className="flex flex-col gap-4" data-id="tabTitlesCol">
         {titles.map((title, index) => {
           return (
-            <Button key={index} isPrimary={index === activeTab} onClick={() => setActiveTab(index)}>
+            <Button className="whitespace-nowrap" key={index} isPrimary={index === activeTab} onClick={() => setActiveTab(index)}>
               {title}
             </Button>
           );

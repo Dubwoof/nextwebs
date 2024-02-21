@@ -14,13 +14,13 @@ export function AboutSection(): JSX.Element {
             <Tab label="Overview">
               <Overview />
             </Tab>
-            <Tab label="Elements">
+            <Tab label="UI Library">
               <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
-            <Tab label="Components">
+            <Tab label="Products">
               <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
-            <Tab label="Tools">
+            <Tab label="Projects">
               <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
           </Tabs>

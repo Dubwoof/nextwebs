@@ -23,7 +23,7 @@ const styles = {
 
 export function Overview(): JSX.Element {
   return (
-    <div className="text-start">
+    <div className="text-start p-4">
       <Typography variant="h2" transform="uppercase">
         About Me
       </Typography>
@@ -36,20 +36,20 @@ export function Overview(): JSX.Element {
         grow and improve my skills.
       </Typography>
 
-      <div className="flex gap-8 mb-8">
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center justify-start w-1/3">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8 mb-8">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center justify-start md:w-1/3">
           <Typography variant="overline" className="w-min">
             {calculateYearsFromDate('2019-07-01')}+
           </Typography>
           <div className="">years of experience</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center w-1/3">
-        <img className="rounded-md" src={metaLogo} alt="Meta" width={60} height={60} />
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center md:w-1/3">
+          <img className="rounded-md" src={metaLogo} alt="Meta" width={60} height={60} />
           <div className="">Advanced React Certificate</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center w-1/3">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center md:w-1/3">
           <Typography variant="overline" className="w-min">
             4+
           </Typography>

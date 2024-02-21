@@ -24,8 +24,8 @@ function changeTabToIndexTwo(tabNumber: number) {
 
 const routes: NavigationRoute[] = [
   { label: 'About', path: '/about', onClick: () => changeTabToIndexTwo(0) },
-  { label: 'UI Library', path: '/components', onClick: () => changeTabToIndexTwo(2) },
-  { label: 'Products', path: '/tools', onClick: () => changeTabToIndexTwo(3) },
+  { label: 'UI Library', path: '/components', onClick: () => changeTabToIndexTwo(1) },
+  { label: 'Products', path: '/tools', onClick: () => changeTabToIndexTwo(2) },
   { label: 'Login', path: '/login' },
   { label: 'Contact', path: '/contact', isPrimary: true },
 ];

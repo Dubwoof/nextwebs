@@ -35,13 +35,6 @@ export function Overview(): JSX.Element {
           <img className="object-cover aspect-square" src={metaLogo} alt="Meta" width={32} height={32} />
           <div className="">Advanced React Certificate</div>
         </div>
-
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center md:w-1/3 select-none h-14 md:h-20">
-          <Typography variant="overline" className="w-min">
-            4+
-          </Typography>
-          <div className="">years of experience</div>
-        </div>
       </div>
 
       <Typography variant="h3">My Stack</Typography>
@@ -61,7 +54,7 @@ export function Overview(): JSX.Element {
           return null;
         })}
       </div>
-      
+
       <Typography variant="subtitle1" className="mb-4">
         In Progress
       </Typography>

@@ -14,7 +14,6 @@ import nodejsLogo from '../../../../../assets/stack/nodejs.png';
 import rustLogo from '../../../../../assets/stack/rust.png';
 import nxLogo from '../../../../../assets/stack/nx.jpeg';
 import metaLogo from '../../../../../assets/meta.png';
-import cn from 'classnames';
 
 const styles = {
   stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl hover:bg-slate-700 w-24 h-24 select-none',
@@ -83,7 +82,7 @@ export function Overview(): JSX.Element {
       <Typography variant="subtitle1" className="mb-4">
         Application & Data
       </Typography>
-      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mb-8">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
         {stack.map((item, index) => {
           if (item.category === 'applicationAndData') {
             return (
@@ -99,7 +98,7 @@ export function Overview(): JSX.Element {
       <Typography variant="subtitle1" className="mb-4">
         In Progress
       </Typography>
-      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mb-8">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
         {stack.map((item, index) => {
           if (item.category === 'inProgress') {
             return (

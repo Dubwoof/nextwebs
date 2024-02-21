@@ -11,7 +11,7 @@ export function Projects(): JSX.Element {
       </Typography>
       <div className="flex">
         <Link target="_blank" to="https://www.skinsquad.de">
-          <img className="h-[150px] w-[280px] rounded-md" src={skinsquad} alt="skindquad.de" width={150} height={150} />
+          <img className="h-[150px] w-[250px] rounded-md object-contain bg-white" src={skinsquad} alt="skindquad.de" width={150} height={150} />
         </Link>
         <div className="flex flex-col ml-4">
           <Typography variant="h3">skinsquad.de</Typography>

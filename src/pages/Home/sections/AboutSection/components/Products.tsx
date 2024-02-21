@@ -11,7 +11,7 @@ export function Products(): JSX.Element {
       </Typography>
       <div className="flex">
         <Link to="/immorechner">
-          <img className="h-[150px] w-[250px] rounded-md" src={immoRechner} alt="skindquad.de" width={150} height={150} />
+          <img className="h-[150px] w-[250px] rounded-md object-contain bg-white" src={immoRechner} alt="skindquad.de" width={150} height={150} />
         </Link>
         <div className="flex flex-col ml-4 ">
           <Typography variant="h3">Immo Rechner</Typography>

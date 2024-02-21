@@ -14,6 +14,7 @@ import nstjsLogo from '../../../../../assets/stack/nestjs.jpeg';
 import nodejsLogo from '../../../../../assets/stack/nodejs.png';
 import rustLogo from '../../../../../assets/stack/rust.png';
 import { NxLogo } from '../../../../../elements/NxLogo/NxLogo';
+import metaLogo from '../../../../../assets/meta.png';
 import cn from 'classnames';
 
 const styles = {
@@ -37,19 +38,19 @@ export function Overview(): JSX.Element {
       </Typography>
 
       <div className="flex gap-8 mb-8">
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center justify-start">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center justify-start w-1/3">
           <Typography variant="overline" className="w-min">
             {calculateYearsFromDate('2019-07-01')}+
           </Typography>
           <div className="">years of experience</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center">
-          <ReactLogo />
-          <div className="">react professional</div>
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center w-1/3">
+        <img className="rounded-md" src={metaLogo} alt="Meta" width={60} height={60} />
+          <div className="">Advanced React Certificate</div>
         </div>
 
-        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center">
+        <div className="flex bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-xl gap-3 items-center w-1/3">
           <Typography variant="overline" className="w-min">
             4+
           </Typography>

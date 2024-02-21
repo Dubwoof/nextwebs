@@ -6,9 +6,5 @@ export interface TabsProps {
 
 export interface TabProps {
   children: ReactNode;
-}
-
-export interface TabChildProps {
-  children: ReactNode;
-  childType: 'title' | 'content';
+  label: string;
 }

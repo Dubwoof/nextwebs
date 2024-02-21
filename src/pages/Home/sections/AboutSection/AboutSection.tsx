@@ -15,19 +15,13 @@ export function AboutSection(): JSX.Element {
               <Overview />
             </Tab>
             <Tab label="Elements">
-              <div className="flex justify-center h-full items-center">
-                <Typography variant="overline">COMING SOON!</Typography>
-              </div>
+              <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
             <Tab label="Components">
-              <div className="flex justify-center h-full items-center">
-                <Typography variant="overline">COMING SOON!</Typography>
-              </div>
+              <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
             <Tab label="Tools">
-              <div className="flex justify-center h-full items-center">
-                <Typography variant="overline">COMING SOON!</Typography>
-              </div>
+              <Typography variant="overline">COMING SOON!</Typography>
             </Tab>
           </Tabs>
         </div>

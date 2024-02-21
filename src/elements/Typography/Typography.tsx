@@ -45,5 +45,5 @@ export function Typography({ variant, children, className, transform }: Typograp
     return <p className={`text-xs font-robotoRegular lg:text-sm ${className}`}>{transformedChildren}</p>;
   }
 
-  return <p className={`text-base font-robotoRegular lg:text-lg ${className}`}>{transformedChildren}</p>;
+  return <p className={`text-base font-robotoRegular lg:text-base ${className}`}>{transformedChildren}</p>;
 }

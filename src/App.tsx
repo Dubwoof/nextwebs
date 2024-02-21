@@ -6,6 +6,7 @@ import { Home } from './pages/Home/Home';
 import { Logo } from './components/Logo/Logo';
 import { NavigationRoute } from './components/Navigation/Navigation.types';
 import { Footer } from './components/Footer/Footer';
+import { Imprint } from './pages/Imprint/Imprint';
 
 export default function WrappedApp(): JSX.Element {
   return (
@@ -36,6 +37,7 @@ function App() {
       <Navigation logo={<Logo />} routes={routes} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/imprint" element={<Imprint />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

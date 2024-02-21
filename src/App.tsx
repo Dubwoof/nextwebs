@@ -23,12 +23,20 @@ function changeTab(tabNumber: number) {
   window.dispatchEvent(changeTabEvent);
 }
 
+function mailto() {
+  const email = 'm&#97;ilto&#58;&#107;o&#37;6E&#37;7&#52;akt&#64;nextwebs&#46;de';
+  const subject = 'Nextwebs';
+  const body = 'Hello Nextwebs team,\n\n';
+  const mailtoLink = `mailto:${decodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
+}
+
 const routes: NavigationRoute[] = [
   { label: 'About', path: '/about', onClick: () => changeTab(0) },
   { label: 'UI Library', path: '/components', onClick: () => changeTab(1) },
   { label: 'Products', path: '/tools', onClick: () => changeTab(2) },
-  { label: 'Login', path: '/login' },
-  { label: 'Contact', path: '/contact', isPrimary: true },
+  // { label: 'Login', path: '/login' },
+  { label: 'Contact', path: '/contact', isPrimary: true, onClick: () => mailto() },
 ];
 
 function App() {

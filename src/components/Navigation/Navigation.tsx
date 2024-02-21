@@ -2,12 +2,13 @@ import { JSX } from 'react';
 import { NavigationProps } from './Navigation.types';
 import { styles } from './Navigation.styles';
 import Button from '../../elements/Button/Button';
+import { Link } from 'react-router-dom';
 
 export function Navigation({ logo, routes }: NavigationProps): JSX.Element {
   return (
     <div className={styles.nav}>
       <div className={styles.navLine}>
-        {logo}
+        <Link  to="/">{logo}</Link>
         <div className={styles.textLinks}>
           {routes.map((route, index) => {
             return (

@@ -1,17 +1,14 @@
 import { ReactNode } from 'react';
 
-export interface TabProps {
-  children: ReactNode;
-}
-
 export interface TabsProps {
   children: ReactNode[];
 }
 
-export interface TabTitleProps {
+export interface TabProps {
   children: ReactNode;
 }
 
-export interface TabContentProps {
+export interface TabChildProps {
   children: ReactNode;
+  childType: 'title' | 'content';
 }

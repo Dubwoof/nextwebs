@@ -1,7 +1,7 @@
 import { JSX } from 'react';
 import { Section } from '../../../../components/Section/Section';
 import { NavWidth } from '../../../../layouts/NavWidth';
-import { Tab, TabContent, TabTitle, Tabs } from '../../../../components/Tabs/Tabs';
+import { Tab, TabChild, Tabs } from '../../../../components/Tabs/Tabs';
 import { Overview } from './components/Overview';
 import { Typography } from '../../../../elements/Typography/Typography';
 
@@ -12,34 +12,34 @@ export function AboutSection(): JSX.Element {
         <div className="text-center min-h-[70vh]">
           <Tabs>
             <Tab>
-              <TabTitle>Overview</TabTitle>
-              <TabContent>
+              <TabChild childType="title">Overview</TabChild>
+              <TabChild childType="content">
                 <Overview />
-              </TabContent>
+              </TabChild>
             </Tab>
             <Tab>
-              <TabTitle>Elements</TabTitle>
-              <TabContent>
+              <TabChild childType="title">Elements</TabChild>
+              <TabChild childType="content">
                 <div className="flex justify-center h-full items-center">
                   <Typography variant="overline">COMING SOON!</Typography>
                 </div>
-              </TabContent>
+              </TabChild>
             </Tab>
             <Tab>
-              <TabTitle>Components</TabTitle>
-              <TabContent>
+              <TabChild childType="title">Components</TabChild>
+              <TabChild childType="content">
                 <div className="flex justify-center h-full items-center">
                   <Typography variant="overline">COMING SOON!</Typography>
                 </div>
-              </TabContent>
+              </TabChild>
             </Tab>
             <Tab>
-              <TabTitle>Tools</TabTitle>
-              <TabContent>
+              <TabChild childType="title">Tools</TabChild>
+              <TabChild childType="content">
                 <div className="flex justify-center h-full items-center">
                   <Typography variant="overline">COMING SOON!</Typography>
                 </div>
-              </TabContent>
+              </TabChild>
             </Tab>
           </Tabs>
         </div>

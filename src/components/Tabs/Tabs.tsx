@@ -1,5 +1,5 @@
 import { useState, ReactNode, JSX, isValidElement, Children } from 'react';
-import { TabContentProps, TabProps, TabTitleProps, TabsProps } from './Tabs.types';
+import { TabsProps, TabProps, TabChildProps } from './Tabs.types';
 import Button from '../../elements/Button/Button';
 
 function Tabs({ children }: TabsProps): JSX.Element {
@@ -11,33 +11,25 @@ function Tabs({ children }: TabsProps): JSX.Element {
     if (isValidElement(child)) {
       Children.forEach(child.props.children, (tabChild, index) => {
         if (isValidElement(tabChild)) {
-          const typeName = typeof tabChild.type === 'function' ? tabChild.type.name : '';
-          if (typeName === 'TabTitle') {
-            console.log('tabChild', tabChild);
+          const childProps = tabChild.props as TabChildProps;
+          if (childProps.childType === 'title') {
             titles.push(
               <Button
-                isPrimary={tabIndex === activeTab}
                 key={`title_${tabIndex}_${index}`}
                 onClick={() => setActiveTab(tabIndex)}
+                isPrimary={activeTab === tabIndex}
                 className="cursor-pointer text-start"
               >
                 {tabChild}
-              </Button>,
+              </Button>
             );
-          } else if (typeName === 'TabContent') {
-            console.log('tabChild', tabChild);
+          } else if (childProps.childType === 'content') {
             contents.push(tabChild);
-          } else {
-            console.log('no valid element', tabChild);
           }
         }
-        console.log('no valid element', tabChild);
       });
     }
   });
-
-  console.log('titles', titles);
-  console.log('contents', contents);
 
   return (
     <div className="flex gap-8">
@@ -53,12 +45,8 @@ function Tab({ children }: TabProps): JSX.Element {
   return <div data-id="tab">{children}</div>;
 }
 
-function TabTitle({ children }: TabTitleProps): JSX.Element {
-  return <div data-id="tabTitle">{children}</div>;
+function TabChild({ children }: TabChildProps): JSX.Element {
+  return <div>{children}</div>;
 }
 
-function TabContent({ children }: TabContentProps): JSX.Element {
-  return <div data-id="tabContent">{children}</div>;
-}
-
-export { Tabs, Tab, TabTitle, TabContent };
+export { Tabs, Tab, TabChild };

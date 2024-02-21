@@ -1,16 +1,16 @@
-import React, { useState, ReactNode } from 'react';
+import { useState, ReactNode, JSX, isValidElement, Children } from 'react';
 import { TabContentProps, TabProps, TabTitleProps, TabsProps } from './Tabs.types';
 import Button from '../../elements/Button/Button';
 
-function Tabs({ children }: TabsProps) {
+function Tabs({ children }: TabsProps): JSX.Element {
   const [activeTab, setActiveTab] = useState(0);
   const contents: ReactNode[] = [];
   const titles: ReactNode[] = [];
 
-  React.Children.forEach(children, (child, tabIndex) => {
-    if (React.isValidElement(child)) {
-      React.Children.forEach(child.props.children, (tabChild, index) => {
-        if (React.isValidElement(tabChild)) {
+  Children.forEach(children, (child, tabIndex) => {
+    if (isValidElement(child)) {
+      Children.forEach(child.props.children, (tabChild, index) => {
+        if (isValidElement(tabChild)) {
           const typeName = typeof tabChild.type === 'function' ? tabChild.type.name : '';
           if (typeName === 'TabTitle') {
             titles.push(
@@ -39,15 +39,15 @@ function Tabs({ children }: TabsProps) {
   );
 }
 
-function Tab({ children }: TabProps) {
+function Tab({ children }: TabProps): JSX.Element {
   return <div className="tab">{children}</div>;
 }
 
-function TabTitle({ children }: TabTitleProps) {
-  return <>{children}</>;
+function TabTitle({ children }: TabTitleProps): JSX.Element {
+  return <div>{children}</div>;
 }
 
-function TabContent({ children }: TabContentProps) {
+function TabContent({ children }: TabContentProps): JSX.Element {
   return <div>{children}</div>;
 }
 

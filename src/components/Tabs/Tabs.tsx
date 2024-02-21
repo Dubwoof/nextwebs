@@ -1,4 +1,4 @@
-import { useState, ReactNode, JSX, isValidElement, Children } from 'react';
+import { useState, ReactNode, JSX, isValidElement, Children, useEffect, useRef } from 'react';
 import { TabsProps, TabProps, TabChildProps } from './Tabs.types';
 import Button from '../../elements/Button/Button';
 
@@ -6,6 +6,23 @@ function Tabs({ children }: TabsProps): JSX.Element {
   const [activeTab, setActiveTab] = useState(0);
   const contents: ReactNode[] = [];
   const titles: ReactNode[] = [];
+  const tabsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Listen for the custom event
+    const handleTabChange = (event: CustomEvent<number>) => {
+      setActiveTab(event.detail);
+      if (tabsRef.current) {
+        tabsRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('changeTab', handleTabChange as EventListener);
+
+    return () => {
+      window.removeEventListener('changeTab', handleTabChange as EventListener);
+    };
+  }, []);
 
   Children.forEach(children, (child, tabIndex) => {
     if (isValidElement(child)) {
@@ -21,7 +38,7 @@ function Tabs({ children }: TabsProps): JSX.Element {
                 className="cursor-pointer text-start"
               >
                 {tabChild}
-              </Button>
+              </Button>,
             );
           } else if (childProps.childType === 'content') {
             contents.push(tabChild);
@@ -32,7 +49,7 @@ function Tabs({ children }: TabsProps): JSX.Element {
   });
 
   return (
-    <div className="flex gap-8">
+    <div ref={tabsRef} className="flex gap-8">
       <div className="flex flex-col gap-4 cursor-pointer" data-id="tabTitlesCol">
         {titles}
       </div>

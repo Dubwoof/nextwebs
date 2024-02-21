@@ -10,7 +10,11 @@ export function Navigation({ logo, routes }: NavigationProps): JSX.Element {
         {logo}
         <div className={styles.textLinks}>
           {routes.map((route, index) => {
-            return <Button key={index} isPrimary={route.isPrimary}>{route.label}</Button>;
+            return (
+              <Button key={index} isPrimary={route.isPrimary} onClick={route.onClick}>
+                {route.label}
+              </Button>
+            );
           })}
         </div>
         <div className={styles.icons}>{/* {icon links} */}</div>

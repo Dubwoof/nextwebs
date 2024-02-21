@@ -15,10 +15,17 @@ export default function WrappedApp(): JSX.Element {
   );
 }
 
+function changeTabToIndexTwo(tabNumber: number) {
+  const changeTabEvent = new CustomEvent<number>('changeTab', {
+    detail: tabNumber,
+  });
+  window.dispatchEvent(changeTabEvent);
+}
+
 const routes: NavigationRoute[] = [
-  { label: 'Components', path: '/components' },
-  { label: 'About', path: '/about' },
-  { label: 'Tools', path: '/tools' },
+  { label: 'Components', path: '/components', onClick: () => changeTabToIndexTwo(2) },
+  { label: 'About', path: '/about', onClick: () => changeTabToIndexTwo(0) },
+  { label: 'Tools', path: '/tools', onClick: () => changeTabToIndexTwo(3) },
   { label: 'Login', path: '/login' },
   { label: 'Contact', path: '/contact', isPrimary: true },
 ];

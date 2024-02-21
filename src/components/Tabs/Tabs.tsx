@@ -31,24 +31,29 @@ function Tabs({ children }: TabsProps): JSX.Element {
     }
   });
 
+  console.log('titles', titles);
+  console.log('contents', contents);
+
   return (
     <div className="flex gap-8">
-      <div className="flex flex-col gap-4 cursor-pointer">{titles}</div>
-      <div>{contents[activeTab]}</div>
+      <div className="flex flex-col gap-4 cursor-pointer" data-id="tabTitlesCol">
+        {titles}
+      </div>
+      <div data-id="tabContent">{contents[activeTab]}</div>
     </div>
   );
 }
 
 function Tab({ children }: TabProps): JSX.Element {
-  return <div>{children}</div>;
+  return <div data-id="tab">{children}</div>;
 }
 
 function TabTitle({ children }: TabTitleProps): JSX.Element {
-  return <div>{children}</div>;
+  return <div data-id="tabTitle">{children}</div>;
 }
 
 function TabContent({ children }: TabContentProps): JSX.Element {
-  return <div>{children}</div>;
+  return <div data-id="tabContent">{children}</div>;
 }
 
 export { Tabs, Tab, TabTitle, TabContent };

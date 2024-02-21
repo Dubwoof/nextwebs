@@ -34,7 +34,7 @@ function Tabs({ children }: TabsProps): JSX.Element {
 
   return (
     <div ref={tabsRef} className="flex flex-col md:flex-row gap-8">
-      <div className="flex md:flex-col gap-4 overflow-x-scroll no-scrollbar px-4 md:min-w-fit" data-id="tabTitlesCol">
+      <div className="flex md:flex-col gap-4 overflow-x-scroll no-scrollbar md:min-w-fit p-4" data-id="tabTitlesCol">
         {titles.map((title, index) => (
           <Button className="whitespace-nowrap" key={index} isPrimary={index === activeTab} onClick={() => setActiveTab(index)}>
             {title}

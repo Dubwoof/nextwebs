@@ -1,46 +1,12 @@
 import { Typography } from '../../../../../elements/Typography/Typography';
 import { calculateYearsFromDate } from '../../../../../utils/calculateYearsFromDate';
-import reactLogo from '../../../../../assets/stack/react.png';
-import cypressLogo from '../../../../../assets/stack/cypress.png';
-import nextjsLogo from '../../../../../assets/stack/nextjs.png';
-import javascriptLogo from '../../../../../assets/stack/javascript.jpeg';
-import html5Logo from '../../../../../assets/stack/html5.png';
-import css3Logo from '../../../../../assets/stack/css3.png';
-import typescriptLogo from '../../../../../assets/stack/typescript.jpeg';
-import viteLogo from '../../../../../assets/stack/vite.png';
-import postmanLogo from '../../../../../assets/stack/postman.png';
-import nestjsLogo from '../../../../../assets/stack/nestjs.jpeg';
-import nodejsLogo from '../../../../../assets/stack/nodejs.png';
-import rustLogo from '../../../../../assets/stack/rust.png';
-import nxLogo from '../../../../../assets/stack/nx.jpeg';
 import metaLogo from '../../../../../assets/meta.png';
+import { stack } from './stack';
 
 const styles = {
   stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl hover:bg-slate-700 w-24 h-24 select-none',
   grid: 'grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-8',
 };
-
-interface StackItem {
-  name: string;
-  logo: string;
-  category?: 'applicationAndData' | 'inProgress';
-}
-
-const stack: StackItem[] = [
-  { name: 'React', logo: reactLogo, category: 'applicationAndData' },
-  { name: 'TypeScript', logo: typescriptLogo, category: 'applicationAndData' },
-  { name: 'JavaScript', logo: javascriptLogo, category: 'applicationAndData' },
-  { name: 'NextJS', logo: nextjsLogo, category: 'applicationAndData' },
-  { name: 'Cypress', logo: cypressLogo, category: 'applicationAndData' },
-  { name: 'Vite', logo: viteLogo, category: 'applicationAndData' },
-  { name: 'Postman', logo: postmanLogo, category: 'applicationAndData' },
-  { name: 'NodeJS', logo: nodejsLogo, category: 'applicationAndData' },
-  { name: 'HTML 5', logo: html5Logo, category: 'applicationAndData' },
-  { name: 'CSS 3', logo: css3Logo, category: 'applicationAndData' },
-  { name: 'Nx', logo: nxLogo, category: 'inProgress' },
-  { name: 'NestJS', logo: nestjsLogo, category: 'inProgress' },
-  { name: 'Rust', logo: rustLogo, category: 'inProgress' },
-];
 
 export function Overview(): JSX.Element {
   return (
@@ -95,6 +61,7 @@ export function Overview(): JSX.Element {
           return null;
         })}
       </div>
+      
       <Typography variant="subtitle1" className="mb-4">
         In Progress
       </Typography>

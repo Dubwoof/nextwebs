@@ -9,11 +9,11 @@ export function Products(): JSX.Element {
       <Typography variant="h2" className="mb-4">
         Products
       </Typography>
-      <div className="flex">
+      <div className="flex bg-slate-500 rounded-md">
         <Link to="/immorechner">
           <img className="h-[150px] w-[250px] rounded-md object-contain bg-white" src={immoRechner} alt="skindquad.de" width={150} height={150} />
         </Link>
-        <div className="flex flex-col ml-4 ">
+        <div className="flex flex-col px-4">
           <Typography variant="h3">Immo Rechner</Typography>
           <Typography className="mb-4">Design & Entwicklung</Typography>
 

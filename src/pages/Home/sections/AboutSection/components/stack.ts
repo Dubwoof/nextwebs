@@ -2,6 +2,7 @@ import reactLogo from '../../../../../assets/stack/react.png';
 import cypressLogo from '../../../../../assets/stack/cypress.png';
 import nextjsLogo from '../../../../../assets/stack/nextjs.png';
 import javascriptLogo from '../../../../../assets/stack/javascript.jpeg';
+import tailwindcssLogo from '../../../../../assets/stack/tailwindcss.png';
 import html5Logo from '../../../../../assets/stack/html5.png';
 import css3Logo from '../../../../../assets/stack/css3.png';
 import typescriptLogo from '../../../../../assets/stack/typescript.jpeg';
@@ -27,6 +28,7 @@ export const stack: StackItem[] = [
   { name: 'Vite', logo: viteLogo, category: 'applicationAndData' },
   { name: 'Postman', logo: postmanLogo, category: 'applicationAndData' },
   { name: 'NodeJS', logo: nodejsLogo, category: 'applicationAndData' },
+  { name: 'TailwindCSS', logo: tailwindcssLogo, category: 'applicationAndData' },
   { name: 'HTML 5', logo: html5Logo, category: 'applicationAndData' },
   { name: 'CSS 3', logo: css3Logo, category: 'applicationAndData' },
   { name: 'Nx', logo: nxLogo, category: 'inProgress' },

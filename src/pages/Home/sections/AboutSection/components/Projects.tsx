@@ -9,7 +9,7 @@ export function Projects(): JSX.Element {
       <Typography variant="h2" className="mb-4">
         Projects
       </Typography>
-      <div className="flex">
+      <div className="flex bg-slate-500 rounded-md">
         <Link target="_blank" to="https://www.skinsquad.de">
           <img className="h-[150px] w-[250px] rounded-md object-contain bg-white" src={skinsquad} alt="skindquad.de" width={150} height={150} />
         </Link>

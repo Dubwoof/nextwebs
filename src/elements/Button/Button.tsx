@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
-import cn from 'classnames';
+import { cn } from '../../utils/cn';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   isPrimary?: boolean;

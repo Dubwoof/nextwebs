@@ -5,23 +5,24 @@ import { BiChevronRight } from 'react-icons/bi';
 
 export function Products(): JSX.Element {
   return (
-    <div className="text-start p-4">
-      <Typography variant="h2" className="mb-4">
-        Products
-      </Typography>
-      <div className="flex bg-slate-500 rounded-md">
-        <Link to="/immorechner">
-          <img className="h-[150px] w-[250px] rounded-md object-contain bg-white" src={immoRechner} alt="skindquad.de" width={150} height={150} />
-        </Link>
-        <div className="flex flex-col px-4">
-          <Typography variant="h3">Immo Rechner</Typography>
-          <Typography className="mb-4">Design & Entwicklung</Typography>
+    <div className="flex bg-slate-500 rounded-md m-4">
+      <Link to="/immorechner">
+        <img
+          className="h-[150px] w-[250px] rounded-md object-contain bg-white"
+          src={immoRechner}
+          alt="skindquad.de"
+          width={150}
+          height={150}
+        />
+      </Link>
+      <div className="flex flex-col pl-4 pr-8 text-start">
+        <Typography variant="h3">Immo Rechner</Typography>
+        <Typography className="mb-4">Design & Entwicklung</Typography>
 
-          <Link className="flex items-center" to="/immorechner">
-            <BiChevronRight className="mr-1" />
-            Visit
-          </Link>
-        </div>
+        <Link className="flex items-center" to="/immorechner">
+          <BiChevronRight className="mr-1" />
+          Visit
+        </Link>
       </div>
     </div>
   );

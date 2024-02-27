@@ -14,7 +14,7 @@
   }
 }
 
-:root {
+body {
   --color-primary: #9082e3;
   --color-secondary: #ff8800;
   --color-background: hsl(217.2, 32.6%, 17.5%);

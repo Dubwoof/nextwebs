@@ -17,7 +17,7 @@ export function WelcomeSection(): JSX.Element {
 
   return (
     <Section>
-      <WavyBackground className="max-w-4xl mx-auto pb-40">
+      <WavyBackground className="max-w-4xl mx-auto pb-40" waveOpacity={0.5}>
         <NavWidth>
           <div className="flex flex-col justify-center text-center items-center min-h-[70vh] px-4 lg:px-0">
             <Typography variant="overline" transform="uppercase">

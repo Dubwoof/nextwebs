@@ -12,6 +12,9 @@ import nestjsLogo from '../../../../../assets/stack/nestjs.jpeg';
 import nodejsLogo from '../../../../../assets/stack/nodejs.png';
 import rustLogo from '../../../../../assets/stack/rust.png';
 import nxLogo from '../../../../../assets/stack/nx.jpeg';
+import awsLogo from '../../../../../assets/stack/aws.jpeg';
+import graphqlLogo from '../../../../../assets/stack/graphql.png';
+import scrumLogo from '../../../../../assets/stack/scrum.png';
 
 interface StackItem {
   name: string;
@@ -25,7 +28,9 @@ export const stack: StackItem[] = [
   { name: 'JavaScript', logo: javascriptLogo, category: 'applicationAndData' },
   { name: 'NextJS', logo: nextjsLogo, category: 'applicationAndData' },
   { name: 'Cypress', logo: cypressLogo, category: 'applicationAndData' },
+  { name: 'GraphQL', logo: graphqlLogo, category: 'applicationAndData' },
   { name: 'Vite', logo: viteLogo, category: 'applicationAndData' },
+  { name: 'Scrum', logo: scrumLogo, category: 'applicationAndData' },
   { name: 'Postman', logo: postmanLogo, category: 'applicationAndData' },
   { name: 'NodeJS', logo: nodejsLogo, category: 'applicationAndData' },
   { name: 'TailwindCSS', logo: tailwindcssLogo, category: 'applicationAndData' },
@@ -34,4 +39,5 @@ export const stack: StackItem[] = [
   { name: 'Nx', logo: nxLogo, category: 'inProgress' },
   { name: 'NestJS', logo: nestjsLogo, category: 'inProgress' },
   { name: 'Rust', logo: rustLogo, category: 'inProgress' },
+  { name: 'AWS', logo: awsLogo, category: 'inProgress' },
 ];

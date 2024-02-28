@@ -2,6 +2,7 @@ import { Typography } from '../../../../../elements/Typography/Typography';
 import { calculateYearsFromDate } from '../../../../../utils/calculateYearsFromDate';
 import metaLogo from '../../../../../assets/meta.png';
 import { stack } from './stack';
+import { CardBody, CardContainer, CardItem } from '../../../../../components/TreeDCard/TreeDCard';
 
 const styles = {
   stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl hover:bg-slate-700 w-24 h-24 select-none',
@@ -45,10 +46,16 @@ export function Overview(): JSX.Element {
         {stack.map((item, index) => {
           if (item.category === 'applicationAndData') {
             return (
-              <div key={index} className={styles.stackItem}>
-                <img className="rounded-md" src={item.logo} alt={item.name} width={60} height={60} />
-                <Typography variant="caption">{item.name}</Typography>
-              </div>
+              <CardContainer className="inter-var">
+                <CardBody className="relative group/card w-min h-min">
+                  <CardItem translateZ="50">
+                    <div key={index} className={styles.stackItem}>
+                      <img className="rounded-md" src={item.logo} alt={item.name} width={60} height={60} />
+                      <Typography variant="caption">{item.name}</Typography>
+                    </div>
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
             );
           }
           return null;
@@ -62,10 +69,16 @@ export function Overview(): JSX.Element {
         {stack.map((item, index) => {
           if (item.category === 'inProgress') {
             return (
-              <div key={index} className={styles.stackItem}>
-                <img className="rounded-md" src={item.logo} alt={item.name} width={60} height={60} />
-                <Typography variant="caption">{item.name}</Typography>
-              </div>
+              <CardContainer className="inter-var">
+                <CardBody className="relative group/card w-min h-min">
+                  <CardItem translateZ="50">
+                    <div key={index} className={styles.stackItem}>
+                      <img className="rounded-md" src={item.logo} alt={item.name} width={60} height={60} />
+                      <Typography variant="caption">{item.name}</Typography>
+                    </div>
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
             );
           }
         })}

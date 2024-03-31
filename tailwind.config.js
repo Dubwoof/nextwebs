@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        munich: "url('./src/assets/munich.jpg')",
+        munich: "url('./src/assets/munich.avif')",
       },
       colors: {
         primary: 'var(--color-primary)',

@@ -25,7 +25,7 @@ export function Booking({}: PageProps): JSX.Element {
         </Typography>
 
         <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-60 p-4">
-          <Typography variant="h2" className="font-robotoRegular text-3xl text-robotoBold mb-4 text-background">
+          <Typography variant="h2" className="text-3xl text-robotoBold mb-4 text-background">
             Select Date & Time
           </Typography>
           <div className="flex justify-between mb-4">
@@ -50,7 +50,7 @@ export function Booking({}: PageProps): JSX.Element {
             <div className="flex bg-warning cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2">17:00</div>
           </div>
 
-          <Typography variant="h2" className="text-bold text-xl mb-1 text-background">
+          <Typography variant="h2" className="text-xl mb-1 text-background">
             Persons
           </Typography>
           <input

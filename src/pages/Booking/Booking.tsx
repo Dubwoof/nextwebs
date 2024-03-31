@@ -2,12 +2,13 @@ import { PageProps } from '../Page.types';
 import { Typography } from '../../elements/Typography/Typography';
 import munich from '../../assets/munich.avif';
 import { useState } from 'react';
-import { add, addHours, format, isToday, isTomorrow } from 'date-fns';
+import { add, format, isToday, isTomorrow } from 'date-fns';
 import { Slot } from '../../utils/Slot';
 import { de } from 'date-fns/locale';
 
 export function Booking({}: PageProps): JSX.Element {
-  const today = addHours(new Date(), 14);
+  const today = new Date();
+  today.setHours(14, 0, 0, 0);
 
   const slots: Slot[] = [
     { start: add(today, { days: 0, hours: 0 }) },

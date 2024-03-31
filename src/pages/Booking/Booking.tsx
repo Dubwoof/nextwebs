@@ -4,6 +4,7 @@ import munich from '../../assets/munich.avif';
 import { useState } from 'react';
 import { add, format, isToday, isTomorrow } from 'date-fns';
 import { Slot } from '../../utils/Slot';
+import { de } from 'date-fns/locale';
 
 export function Booking({}: PageProps): JSX.Element {
   const today = new Date(2024, 2, 31, 14, 0);
@@ -76,7 +77,17 @@ export function Booking({}: PageProps): JSX.Element {
                   className={`flex ${selectedDay === index ? 'bg-warning text-white' : 'bg-white text-background'} cursor-pointer h-16 min-w-16 rounded-lg justify-center items-center p-2`}
                   onClick={() => handleDaySelect(index)}
                 >
-                  {isToday(new Date(day)) ? 'Heute' : isTomorrow(new Date(day)) ? 'Morgen' : format(new Date(day), 'EEE')}
+                  {isToday(new Date(day)) ? (
+                    'Heute'
+                  ) : isTomorrow(new Date(day)) ? (
+                    'Morgen'
+                  ) : (
+                    <>
+                      {format(new Date(day), 'EEE', { locale: de })}
+                      <br />
+                      {format(new Date(day), 'd.', { locale: de })}
+                    </>
+                  )}
                 </div>
               );
             })}

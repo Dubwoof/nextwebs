@@ -1,7 +1,6 @@
 import { PageProps } from '../Page.types';
 import { Typography } from '../../elements/Typography/Typography';
 import munich from '../../assets/munich.avif';
-import Button from '../../elements/Button/Button';
 
 export function Booking({}: PageProps): JSX.Element {
   return (

@@ -24,7 +24,7 @@ export function Booking({}: PageProps): JSX.Element {
           <Typography variant="h2" className="font-robotoRegular text-3xl text-robotoBold mb-4">
             Select Date & Time
           </Typography>
-          <div className="flex gap-4 mb-4">
+          <div className="flex justify-between mb-4">
             <div className="flex bg-warning cursor-pointer h-16 rounded-lg justify-center items-center p-2">Heute</div>
             <div className="flex bg-white cursor-pointer h-16 rounded-lg justify-center items-center p-2 text-background">Morgen</div>
             <div className="flex bg-white cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background">

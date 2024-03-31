@@ -21,7 +21,7 @@ export function Booking({}: PageProps): JSX.Element {
   ];
 
   const [selectedDay, setSelectedDay] = useState<number | undefined>();
-  const [selectedSlot, setSelectedSlot] = useState<Slot>();
+  const [selectedSlot, setSelectedSlot] = useState<Slot | undefined>();
   const [persons, setPersons] = useState(1);
 
   function handlePersonsChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -94,7 +94,7 @@ export function Booking({}: PageProps): JSX.Element {
           </div>
 
           {/* Render slots for the selected day */}
-          <div className={`flex ${selectedDay !== undefined ? 'h-16 opacity-100' : 'h-0 opacity-0'} flex gap-4 transition-height duration-300`}>
+          <div className={`${selectedDay !== undefined ? 'h-16 opacity-100 mb-4' : 'h-0 opacity-0 mb-0'} flex gap-4 transition-height duration-300`}>
             {slotsByDay.get(sortedDays[selectedDay!])?.map((slot, index) => (
               <div
                 key={index}
@@ -106,16 +106,20 @@ export function Booking({}: PageProps): JSX.Element {
             ))}
           </div>
 
-          <Typography variant="h2" className="text-xl mb-1 text-background">
-            Personen
-          </Typography>
-          <input
-            className="h-16 bg-white w-16 rounded-lg mb-4 text-background text-center text-xl"
-            name="persons"
-            value={persons}
-            type="number"
-            onChange={handlePersonsChange}
-          />
+          <div
+            className={`${selectedSlot !== undefined ? 'h-fit opacity-100' : 'h-0 opacity-0'} flex flex-col transition-height duration-300`}
+          >
+            <Typography variant="h2" className="text-xl mb-1 text-background">
+              Personen
+            </Typography>
+            <input
+              className="h-16 bg-white w-16 rounded-lg mb-4 text-background text-center text-xl"
+              name="persons"
+              value={persons}
+              type="number"
+              onChange={handlePersonsChange}
+            />
+          </div>
 
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Kostenlos buchen</div>
           <Typography variant="caption" className="font-robotoRegular text-xl mb-4 text-center text-background">

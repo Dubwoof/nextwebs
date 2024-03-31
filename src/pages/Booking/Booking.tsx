@@ -22,18 +22,18 @@ export function Booking({}: PageProps): JSX.Element {
             Select Date & Time
           </Typography>
           <div className="flex gap-4 mb-4">
-            <div className="flex bg-warning cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2">
+            <div className="flex bg-warning cursor-pointer h-16 rounded-lg justify-center items-center p-2">
               Heute
             </div>
-            <div className="flex bg-white cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
+            <div className="flex bg-white cursor-pointer h-16 rounded-lg justify-center items-center p-2 text-background">
               Morgen
             </div>
-            <div className="flex bg-white cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
+            <div className="flex bg-white cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
               Di
               <br />
               03
             </div>
-            <div className="flex bg-white cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
+            <div className="flex bg-white cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
               Mi
               <br />
               04

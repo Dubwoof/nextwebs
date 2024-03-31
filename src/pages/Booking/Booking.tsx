@@ -83,11 +83,11 @@ export function Booking({}: PageProps): JSX.Element {
                   ) : isTomorrow(new Date(day)) ? (
                     'Morgen'
                   ) : (
-                    <>
-                      {format(new Date(day), 'EEE', { locale: de })}
+                    <div className="text-center">
+                      {format(new Date(day), 'EE', { locale: de })}
                       <br />
                       {format(new Date(day), 'd.', { locale: de })}
-                    </>
+                    </div>
                   )}
                 </div>
               );

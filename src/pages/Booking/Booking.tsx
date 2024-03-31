@@ -6,6 +6,10 @@ import { useState } from 'react';
 export function Booking({}: PageProps): JSX.Element {
   const [persons, setPersons] = useState(1);
 
+  function handlePersonsChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setPersons(parseInt(event.target.value));
+  }
+
   return (
     <div className="pb-16 lg:pt-32">
       <div
@@ -49,7 +53,13 @@ export function Booking({}: PageProps): JSX.Element {
           <Typography variant="body1" className="text-bold text-xl mb-1">
             Persons
           </Typography>
-          <input className="h-16 w-16 rounded-lg mb-4 text-background text-center text-xl" name="persons" value={persons} type="number" />
+          <input
+            className="h-16 w-16 rounded-lg mb-4 text-background text-center text-xl"
+            name="persons"
+            value={persons}
+            type="number"
+            onChange={handlePersonsChange}
+          />
 
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Book free</div>
           <Typography variant="caption" className="font-robotoRegular text-xl mb-4 text-center">

@@ -34,8 +34,8 @@ export function Booking({}: PageProps): JSX.Element {
   }
 
   function handleSlotSelect(slot: Slot) {
+    console.log(slot);
     setSelectedSlot(slot);
-    // You may perform any additional actions upon slot selection here
   }
 
   // Group slots by day
@@ -55,15 +55,15 @@ export function Booking({}: PageProps): JSX.Element {
     <div className="pb-16 lg:pt-32">
       <div
         style={{ backgroundImage: `url(${munich})` }}
-        className="bg-munich bg-center h-svh bg-cover w-screen flex flex-col justify-between px-4 py-8"
+        className="bg-munich bg-center h-svh bg-cover w-screen flex flex-col justify-between px-4 pt-8 pb-4"
       >
-        <Typography variant="h1" className="text-3xl leading-8">
+        <h1 className="text-3xl font-comfortaaBold leading-8">
           Munich
           <br />
           City
           <br />
           Tour
-        </Typography>
+        </h1>
 
         <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-60 p-4">
           <Typography variant="h2" className="text-3xl text-robotoBold mb-4 text-background">
@@ -94,11 +94,13 @@ export function Booking({}: PageProps): JSX.Element {
           </div>
 
           {/* Render slots for the selected day */}
-          <div className={`${selectedDay !== undefined ? 'h-16 opacity-100 mb-4' : 'h-0 opacity-0 mb-0'} flex gap-4 transition-height duration-300`}>
+          <div
+            className={`${selectedDay !== undefined ? 'h-16 opacity-100 mb-4' : 'h-0 opacity-0 mb-0'} flex gap-4 transition-height duration-300`}
+          >
             {slotsByDay.get(sortedDays[selectedDay!])?.map((slot, index) => (
               <div
                 key={index}
-                className={`flex ${selectedSlot === slot ? 'bg-warning' : 'bg-white'} cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background`}
+                className={`flex ${selectedSlot && selectedSlot.start === slot.start && selectedSlot.end === slot.end ? 'bg-warning' : 'bg-white'} cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background`}
                 onClick={() => handleSlotSelect(slot)}
               >
                 {format(slot.start, 'HH:mm')}
@@ -122,9 +124,9 @@ export function Booking({}: PageProps): JSX.Element {
           </div>
 
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Kostenlos buchen</div>
-          <Typography variant="caption" className="font-robotoRegular text-xl mb-4 text-center text-background">
+          <p className="text-sm text-center text-background">
             (Trinkgeld basiert)
-          </Typography>
+          </p>
         </div>
       </div>
     </div>

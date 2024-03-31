@@ -60,8 +60,6 @@ describe('generateSlots', () => {
   it('should return 5 slots starting from 9:00 AM with 30-minute interval', () => {
     // Mock current date
     Date.now = vi.fn(() => new Date('2024-03-15T11:00:00').getTime());
-    const days = 1;
-    const intervalMin = 30;
     const slots = generateSlots({ startHour: 9, endHour: 12, days: 1, slotLengthMinutes: 60, intervalMin: 30 });
   
     expect(slots.length).toBe(5);

@@ -23,29 +23,20 @@ export function Booking({}: PageProps): JSX.Element {
           </Typography>
           <div className="flex gap-4 mb-4">
             <div className="flex bg-warning cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2">
-              Mon
-              <br />
-              01
+              Heute
             </div>
             <div className="flex bg-white cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
-              Tue
-              <br />
-              02
+              Morgen
             </div>
             <div className="flex bg-white cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
-              Wed
+              Di
               <br />
               03
             </div>
             <div className="flex bg-white cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
-              Thu
+              Mi
               <br />
               04
-            </div>
-            <div className="flex bg-white cursor-pointer w-16 aspect-square rounded-lg justify-center items-center p-2 text-background">
-              Fri
-              <br />
-              05
             </div>
           </div>
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Book free</div>

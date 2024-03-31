@@ -20,7 +20,7 @@ export function Booking({}: PageProps): JSX.Element {
     { start: add(today, { days: 3, hours: 2 }), end: add(today, { days: 3, hours: 4 }) },
   ];
 
-  const [selectedDay, setSelectedDay] = useState(0);
+  const [selectedDay, setSelectedDay] = useState<number | undefined>();
   const [selectedSlot, setSelectedSlot] = useState<Slot>();
   const [persons, setPersons] = useState(1);
 
@@ -94,8 +94,8 @@ export function Booking({}: PageProps): JSX.Element {
           </div>
 
           {/* Render slots for the selected day */}
-          <div className="flex gap-4">
-            {slotsByDay.get(sortedDays[selectedDay])?.map((slot, index) => (
+          <div className={`flex ${selectedDay !== undefined ? 'h-16 opacity-100' : 'h-0 opacity-0'} flex gap-4 transition-height duration-300`}>
+            {slotsByDay.get(sortedDays[selectedDay!])?.map((slot, index) => (
               <div
                 key={index}
                 className={`flex ${selectedSlot === slot ? 'bg-warning' : 'bg-white'} cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background`}

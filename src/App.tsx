@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Navigation } from './components/Navigation/Navigation';
 import { NotFound } from './pages/NotFound/NotFound';
 import { Home } from './pages/Home/Home';
@@ -7,6 +7,7 @@ import { Logo } from './components/Logo/Logo';
 import { NavigationRoute } from './components/Navigation/Navigation.types';
 import { Footer } from './components/Footer/Footer';
 import { Imprint } from './pages/Imprint/Imprint';
+import { Booking } from './pages/Booking/Booking';
 
 export default function WrappedApp(): JSX.Element {
   return (
@@ -35,17 +36,22 @@ const routes: NavigationRoute[] = [
   { label: 'About', path: '/about', onClick: () => changeTab(0) },
   { label: 'UI Library', path: '/components', onClick: () => changeTab(1) },
   { label: 'Products', path: '/tools', onClick: () => changeTab(2) },
-  // { label: 'Login', path: '/login' },
   { label: 'Contact', path: '/contact', isPrimary: true, onClick: () => mailto() },
 ];
 
+const routesWithNavigation: string[] = ['/', '/*'];
+
 function App() {
+  const location = useLocation();
+  const shouldDisplayNavigation = routesWithNavigation.some(route => route === location.pathname);
+
   return (
     <div className="flex flex-col lg:justify-center w-screen">
-      <Navigation logo={<Logo />} routes={routes} />
+      {shouldDisplayNavigation && <Navigation logo={<Logo />} routes={routes} />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/imprint" element={<Imprint />} />
+        <Route path="/booking" element={<Booking />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

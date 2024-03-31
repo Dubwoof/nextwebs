@@ -6,7 +6,7 @@ import { CardBody, CardContainer, CardItem } from '../../../../../components/Tre
 
 const styles = {
   stackItem: 'flex flex-col items-center justify-center p-2 gap-1 bg-slate-600 rounded-xl hover:bg-slate-700 w-24 h-24 select-none',
-  grid: 'grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-8',
+  grid: 'grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-8',
 };
 
 export function Overview(): JSX.Element {

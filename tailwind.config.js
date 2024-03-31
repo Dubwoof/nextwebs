@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        munich: "url('./src/assets/munich.jpg')",
+      },
       colors: {
         primary: 'var(--color-primary)',
         textColor: 'var(--color-text)',

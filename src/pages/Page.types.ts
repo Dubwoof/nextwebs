@@ -1,1 +1,3 @@
-export interface PageProps {}
+import { PropsWithChildren } from "react";
+
+export interface PageProps extends PropsWithChildren {}

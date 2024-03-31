@@ -54,7 +54,7 @@ export function Booking({}: PageProps): JSX.Element {
             Persons
           </Typography>
           <input
-            className="h-16 w-16 rounded-lg mb-4 text-background text-center text-xl"
+            className="h-16 bg-white w-16 rounded-lg mb-4 text-background text-center text-xl"
             name="persons"
             value={persons}
             type="number"

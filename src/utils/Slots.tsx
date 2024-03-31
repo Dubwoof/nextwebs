@@ -20,6 +20,7 @@ export function Slots({ region }: SlotProps): JSX.Element {
   const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
 
   // Generate slots
+  //@ts-ignore
   const generatedSlots = generateSlots({ startHour, endHour, days, slotLengthMinutes });
 
   // Filter slots by region

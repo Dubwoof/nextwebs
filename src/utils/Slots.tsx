@@ -85,7 +85,7 @@ export function Slots({ region }: SlotProps): JSX.Element {
 
       {selectedSlot && (
         <div>
-          Selected Slot: {format(selectedSlot.start, 'EE')} {format(selectedSlot.start, 'HH:mm')} - {format(selectedSlot.end, 'HH:mm')}
+          Selected Slot: {format(selectedSlot.start, 'EE')} {format(selectedSlot.start, 'HH:mm')}
         </div>
       )}
     </div>

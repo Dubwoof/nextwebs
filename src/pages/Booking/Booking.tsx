@@ -2,22 +2,22 @@ import { PageProps } from '../Page.types';
 import { Typography } from '../../elements/Typography/Typography';
 import munich from '../../assets/munich.avif';
 import { useState } from 'react';
-import { add, format, isToday, isTomorrow } from 'date-fns';
+import { add, addHours, format, isToday, isTomorrow } from 'date-fns';
 import { Slot } from '../../utils/Slot';
 import { de } from 'date-fns/locale';
 
 export function Booking({}: PageProps): JSX.Element {
-  const today = new Date(2024, 2, 31, 14, 0);
+  const today = addHours(new Date(), 14);
 
-  const slots = [
-    { start: add(today, { days: 0, hours: 0 }), end: add(today, { days: 0, hours: 2 }) },
-    { start: add(today, { days: 0, hours: 2 }), end: add(today, { days: 0, hours: 4 }) },
-    { start: add(today, { days: 1, hours: 0 }), end: add(today, { days: 1, hours: 2 }) },
-    { start: add(today, { days: 1, hours: 2 }), end: add(today, { days: 1, hours: 4 }) },
-    { start: add(today, { days: 2, hours: 0 }), end: add(today, { days: 2, hours: 2 }) },
-    { start: add(today, { days: 2, hours: 2 }), end: add(today, { days: 2, hours: 4 }) },
-    { start: add(today, { days: 3, hours: 0 }), end: add(today, { days: 3, hours: 2 }) },
-    { start: add(today, { days: 3, hours: 2 }), end: add(today, { days: 3, hours: 4 }) },
+  const slots: Slot[] = [
+    { start: add(today, { days: 0, hours: 0 }) },
+    { start: add(today, { days: 0, hours: 2 }) },
+    { start: add(today, { days: 1, hours: 0 }) },
+    { start: add(today, { days: 1, hours: 2 }) },
+    { start: add(today, { days: 2, hours: 0 }) },
+    { start: add(today, { days: 2, hours: 2 }) },
+    { start: add(today, { days: 3, hours: 0 }) },
+    { start: add(today, { days: 3, hours: 2 }) },
   ];
 
   const [selectedDay, setSelectedDay] = useState<number | undefined>();
@@ -100,7 +100,7 @@ export function Booking({}: PageProps): JSX.Element {
             {slotsByDay.get(sortedDays[selectedDay!])?.map((slot, index) => (
               <div
                 key={index}
-                className={`flex ${selectedSlot && selectedSlot.start === slot.start && selectedSlot.end === slot.end ? 'bg-warning' : 'bg-white'} cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background`}
+                className={`flex ${selectedSlot && selectedSlot.start === slot.start ? 'bg-warning' : 'bg-white'} cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background`}
                 onClick={() => handleSlotSelect(slot)}
               >
                 {format(slot.start, 'HH:mm')}
@@ -124,9 +124,7 @@ export function Booking({}: PageProps): JSX.Element {
           </div>
 
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Kostenlos buchen</div>
-          <p className="text-sm text-center text-background">
-            (Trinkgeld basiert)
-          </p>
+          <p className="text-sm text-center text-background">(Trinkgeld basiert)</p>
         </div>
       </div>
     </div>

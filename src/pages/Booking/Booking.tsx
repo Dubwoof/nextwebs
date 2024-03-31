@@ -50,7 +50,7 @@ export function Booking({}: PageProps): JSX.Element {
             <div className="flex bg-warning cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2">17:00</div>
           </div>
 
-          <Typography variant="body1" className="text-bold text-xl mb-1">
+          <Typography variant="body1" className="text-bold text-xl mb-1 text-background">
             Persons
           </Typography>
           <input
@@ -62,7 +62,7 @@ export function Booking({}: PageProps): JSX.Element {
           />
 
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Book free</div>
-          <Typography variant="caption" className="font-robotoRegular text-xl mb-4 text-center">
+          <Typography variant="caption" className="font-robotoRegular text-xl mb-4 text-center text-background">
             (tip based)
           </Typography>
         </div>

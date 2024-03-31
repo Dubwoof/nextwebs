@@ -65,7 +65,7 @@ export function Booking({}: PageProps): JSX.Element {
           Tour
         </h1>
 
-        <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-60 p-4">
+        <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-60 px-4 pt-4 pb-2">
           <Typography variant="h2" className="text-3xl text-robotoBold mb-4 text-background">
             Bitte auswählen
           </Typography>

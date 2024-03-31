@@ -24,7 +24,7 @@ export function Booking({}: PageProps): JSX.Element {
           Tour
         </Typography>
 
-        <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-30 p-4">
+        <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-60 p-4">
           <Typography variant="h2" className="font-robotoRegular text-3xl text-robotoBold mb-4 text-background">
             Select Date & Time
           </Typography>

@@ -70,7 +70,7 @@ export function Booking({}: PageProps): JSX.Element {
           <Typography variant="h2" className="text-3xl text-robotoBold mb-4 text-background">
             Bitte auswählen
           </Typography>
-          <div className="flex gap-4 mb-4">
+          <div className="flex justify-between mb-4">
             {sortedDays.map((day, index) => {
               return (
                 <div

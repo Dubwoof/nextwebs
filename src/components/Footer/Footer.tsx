@@ -12,6 +12,9 @@ export function Footer(): JSX.Element {
         <Link to="/privacy">
           <Typography variant="caption">Datenschutz</Typography>
         </Link>
+        <Link to="/booking">
+          <Typography variant="caption">Booking</Typography>
+        </Link>
       </div>
     </footer>
   );

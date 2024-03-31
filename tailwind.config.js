@@ -10,6 +10,7 @@ export default {
         primary: 'var(--color-primary)',
         textColor: 'var(--color-text)',
         background: 'var(--color-background)',
+        warning: 'var(--color-warning)',
       },
       maxWidth: {
         navWidth: '1000px',

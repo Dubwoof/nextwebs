@@ -18,6 +18,7 @@ body {
   --color-primary: #9082e3;
   --color-secondary: #ff8800;
   --color-background: hsl(217.2, 32.6%, 17.5%);
+  --color-warning: hsl(349, 100%, 61%);
   --color-card: #ffffff;
   --color-text: hsl(0, 100%, 100%);
   --color-text-secondary: #ffffff;

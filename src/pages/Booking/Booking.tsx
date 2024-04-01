@@ -1,5 +1,4 @@
 import { PageProps } from '../Page.types';
-import { Typography } from '../../elements/Typography/Typography';
 import munich from '../../assets/munich.avif';
 import { useState } from 'react';
 import { add, format, isToday, isTomorrow } from 'date-fns';

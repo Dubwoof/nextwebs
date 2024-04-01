@@ -168,8 +168,7 @@ export function Booking({}: PageProps): JSX.Element {
           </AnimatedContainer>
 
           <div
-            data-ripple-light="true"
-            className="flex justify-center items-center none h-16 center rounded-lg bg-warning transition-all  focus:opacity-[0.85] active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
+            className="flex justify-center items-center select-none h-16 center rounded-lg bg-warning transition-all  focus:opacity-[0.85] active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
           >
             Kostenlos buchen
           </div>

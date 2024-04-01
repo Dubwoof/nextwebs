@@ -39,7 +39,6 @@ export function Booking({}: PageProps): JSX.Element {
 
   function handleDaySelect(dayIndex: number) {
     setSelectedDay(dayIndex);
-    // You may perform any additional actions upon day selection here
   }
 
   function handleSlotSelect(slot: Slot) {
@@ -51,6 +50,12 @@ export function Booking({}: PageProps): JSX.Element {
     if (email === undefined || email === '') {
       return;
     }
+    // validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return;
+    }
+    
     setPersonsFieldVisible(!personsFieldVisible);
   }
 
@@ -153,7 +158,7 @@ export function Booking({}: PageProps): JSX.Element {
                   className="flex flex-col justify-center items-center h-16 w-16 ml-2"
                   onClick={() => setPersons(persons >= 2 ? persons - 1 : 1)}
                 >
-                  <MdRemove size={40} color={Colors.Background} />
+                  <MdRemove size={40} color={persons > 1 ? Colors.Background : Colors.TextLighter} />
                 </div>
                 <div className="flex flex-col justify-center items-center h-16 w-16 ml-2" onClick={() => setPersons(persons + 1)}>
                   <MdAdd size={40} color={Colors.Background} />

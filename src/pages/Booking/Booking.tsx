@@ -34,7 +34,7 @@ export function Booking({}: PageProps): JSX.Element {
   }
 
   function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value);
+    setEmail(event.target.value.toLowerCase());
   }
 
   function handleDaySelect(dayIndex: number) {
@@ -149,11 +149,14 @@ export function Booking({}: PageProps): JSX.Element {
                   type="number"
                   onChange={handlePersonsChange}
                 />
-                <div className="flex flex-col justify-center items-center h-16 w-16 ml-2" onClick={() => setPersons(persons - 1)}>
-                  <MdAdd size={40} color={Colors.Background} />
+                <div
+                  className="flex flex-col justify-center items-center h-16 w-16 ml-2"
+                  onClick={() => setPersons(persons >= 2 ? persons - 1 : 1)}
+                >
+                  <MdRemove size={40} color={Colors.Background} />
                 </div>
                 <div className="flex flex-col justify-center items-center h-16 w-16 ml-2" onClick={() => setPersons(persons + 1)}>
-                  <MdRemove size={40} color={Colors.Background} />
+                  <MdAdd size={40} color={Colors.Background} />
                 </div>
               </div>
             </div>

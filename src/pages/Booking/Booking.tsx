@@ -25,9 +25,14 @@ export function Booking({}: PageProps): JSX.Element {
   const [selectedDay, setSelectedDay] = useState<number | undefined>();
   const [selectedSlot, setSelectedSlot] = useState<Slot | undefined>();
   const [persons, setPersons] = useState(1);
+  const [email, setEmail] = useState<string>();
 
   function handlePersonsChange(event: React.ChangeEvent<HTMLInputElement>) {
     setPersons(parseInt(event.target.value));
+  }
+
+  function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setEmail(event.target.value);
   }
 
   function handleDaySelect(dayIndex: number) {
@@ -68,9 +73,9 @@ export function Booking({}: PageProps): JSX.Element {
         </h1>
 
         <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-60 px-4 pt-4 pb-2">
-          <Typography variant="h2" className="text-3xl text-robotoBold mb-4 text-background">
-            Bitte auswählen
-          </Typography>
+          <label className="text-background">
+            Tour auswählen
+          </label>
           <div className="flex justify-between mb-4">
             {sortedDays.map((day, index) => {
               return (
@@ -96,7 +101,7 @@ export function Booking({}: PageProps): JSX.Element {
           </div>
 
           {/* Render slots for the selected day */}
-          <AnimatedContainer isExpanded={selectedDay !== undefined}>
+          <AnimatedContainer isExpanded={selectedDay !== undefined} className="mb-4">
             <div className="flex gap-4">
               {slotsByDay.get(sortedDays[selectedDay!])?.map((slot, index) => (
                 <div
@@ -110,17 +115,32 @@ export function Booking({}: PageProps): JSX.Element {
             </div>
           </AnimatedContainer>
 
-          <AnimatedContainer isExpanded={selectedSlot !== undefined}>
-            <Typography variant="h2" className="text-xl mb-1 text-background">
-              Personen
-            </Typography>
+          <AnimatedContainer isExpanded={selectedSlot !== undefined} className="mb-4">
+            <label htmlFor="email" className="text-background">
+              Email
+            </label>
             <input
-              className="h-16 bg-white w-16 rounded-lg mb-4 text-background text-center text-xl"
-              name="persons"
-              value={persons}
-              type="number"
-              onChange={handlePersonsChange}
+              className="h-16 bg-white w-full rounded-lg text-background text-lg p-4"
+              name="email"
+              value={email}
+              type="text"
+              onChange={handleEmailChange}
             />
+          </AnimatedContainer>
+
+          <AnimatedContainer isExpanded={email !== undefined} className="mb-4">
+            <div className="flex flex-col">
+              <label htmlFor="persons" className="text-background">
+                Personen
+              </label>
+              <input
+                className="h-16 bg-white w-16 rounded-lg text-background text-center text-lg"
+                name="persons"
+                value={persons}
+                type="number"
+                onChange={handlePersonsChange}
+              />
+            </div>
           </AnimatedContainer>
 
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Kostenlos buchen</div>

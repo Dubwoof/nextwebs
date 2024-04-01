@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { add, format, isToday, isTomorrow } from 'date-fns';
 import { Slot } from '../../utils/Slot';
 import { de } from 'date-fns/locale';
+import { AnimatedContainer } from '../../components/AnimatedContainer/AnimatedContainer';
 
 export function Booking({}: PageProps): JSX.Element {
   const today = new Date();
@@ -95,23 +96,21 @@ export function Booking({}: PageProps): JSX.Element {
           </div>
 
           {/* Render slots for the selected day */}
-          <div
-            className={`${selectedDay !== undefined ? 'h-16 opacity-100 mb-4' : 'h-0 opacity-0 mb-0'} flex gap-4 transition-height duration-300`}
-          >
-            {slotsByDay.get(sortedDays[selectedDay!])?.map((slot, index) => (
-              <div
-                key={index}
-                className={`flex ${selectedSlot && selectedSlot.start === slot.start ? 'bg-warning' : 'bg-white'} cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background`}
-                onClick={() => handleSlotSelect(slot)}
-              >
-                {format(slot.start, 'HH:mm')}
-              </div>
-            ))}
-          </div>
+          <AnimatedContainer isExpanded={selectedDay !== undefined}>
+            <div className="flex gap-4">
+              {slotsByDay.get(sortedDays[selectedDay!])?.map((slot, index) => (
+                <div
+                  key={index}
+                  className={`flex ${selectedSlot && selectedSlot.start === slot.start ? 'bg-warning' : 'bg-white'} cursor-pointer h-16 aspect-square rounded-lg justify-center items-center p-2 text-background`}
+                  onClick={() => handleSlotSelect(slot)}
+                >
+                  {format(slot.start, 'HH:mm')}
+                </div>
+              ))}
+            </div>
+          </AnimatedContainer>
 
-          <div
-            className={`${selectedSlot !== undefined ? 'h-fit opacity-100' : 'h-0 opacity-0'} flex flex-col transition-height duration-300`}
-          >
+          <AnimatedContainer isExpanded={selectedSlot !== undefined}>
             <Typography variant="h2" className="text-xl mb-1 text-background">
               Personen
             </Typography>
@@ -122,7 +121,7 @@ export function Booking({}: PageProps): JSX.Element {
               type="number"
               onChange={handlePersonsChange}
             />
-          </div>
+          </AnimatedContainer>
 
           <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Kostenlos buchen</div>
           <p className="text-sm text-center text-background">(Trinkgeld basiert)</p>

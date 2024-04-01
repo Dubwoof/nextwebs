@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      transitionProperty: {
+        height: 'height',
+      },
       backgroundImage: {
         munich: "url('./src/assets/munich.avif')",
       },

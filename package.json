@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
     "clsx": "^2.1.0",
     "date-fns": "^3.4.0",
     "feiertagejs": "^1.4.0",

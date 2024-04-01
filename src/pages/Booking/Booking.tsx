@@ -6,6 +6,8 @@ import { add, format, isToday, isTomorrow } from 'date-fns';
 import { Slot } from '../../utils/Slot';
 import { de } from 'date-fns/locale';
 import { AnimatedContainer } from '../../components/AnimatedContainer/AnimatedContainer';
+import { MdAdd, MdRemove } from 'react-icons/md';
+import { Colors } from '../../constants/Colors.enum';
 
 export function Booking({}: PageProps): JSX.Element {
   const today = new Date();
@@ -26,6 +28,7 @@ export function Booking({}: PageProps): JSX.Element {
   const [selectedSlot, setSelectedSlot] = useState<Slot | undefined>();
   const [persons, setPersons] = useState(1);
   const [email, setEmail] = useState<string>();
+  const [personsFieldVisible, setPersonsFieldVisible] = useState(false);
 
   function handlePersonsChange(event: React.ChangeEvent<HTMLInputElement>) {
     setPersons(parseInt(event.target.value));
@@ -43,6 +46,13 @@ export function Booking({}: PageProps): JSX.Element {
   function handleSlotSelect(slot: Slot) {
     console.log(slot);
     setSelectedSlot(slot);
+  }
+
+  function togglePersonFieldVisibility() {
+    if (email === undefined || email === '') {
+      return;
+    }
+    setPersonsFieldVisible(!personsFieldVisible);
   }
 
   // Group slots by day
@@ -73,9 +83,7 @@ export function Booking({}: PageProps): JSX.Element {
         </h1>
 
         <div className="w-full bg-white rounded-3xl backdrop-blur bg-opacity-60 px-4 pt-4 pb-2">
-          <label className="text-background">
-            Tour auswählen
-          </label>
+          <label className="text-background">Tour auswählen</label>
           <div className="flex justify-between mb-4">
             {sortedDays.map((day, index) => {
               return (
@@ -125,21 +133,30 @@ export function Booking({}: PageProps): JSX.Element {
               value={email}
               type="text"
               onChange={handleEmailChange}
+              onBlur={togglePersonFieldVisibility}
             />
           </AnimatedContainer>
 
-          <AnimatedContainer isExpanded={email !== undefined} className="mb-4">
+          <AnimatedContainer isExpanded={personsFieldVisible} className="mb-4">
             <div className="flex flex-col">
               <label htmlFor="persons" className="text-background">
                 Personen
               </label>
-              <input
-                className="h-16 bg-white w-16 rounded-lg text-background text-center text-lg"
-                name="persons"
-                value={persons}
-                type="number"
-                onChange={handlePersonsChange}
-              />
+              <div className="flex">
+                <input
+                  className="h-16 bg-white w-16 rounded-lg text-background text-center text-lg"
+                  name="persons"
+                  value={persons}
+                  type="number"
+                  onChange={handlePersonsChange}
+                />
+                <div className="flex flex-col justify-center items-center h-16 w-16 ml-2" onClick={() => setPersons(persons - 1)}>
+                  <MdAdd size={40} color={Colors.Background} />
+                </div>
+                <div className="flex flex-col justify-center items-center h-16 w-16 ml-2" onClick={() => setPersons(persons + 1)}>
+                  <MdRemove size={40} color={Colors.Background} />
+                </div>
+              </div>
             </div>
           </AnimatedContainer>
 

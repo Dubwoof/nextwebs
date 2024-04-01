@@ -55,7 +55,7 @@ export function Booking({}: PageProps): JSX.Element {
     if (!emailRegex.test(email)) {
       return;
     }
-    
+
     setPersonsFieldVisible(!personsFieldVisible);
   }
 
@@ -167,7 +167,12 @@ export function Booking({}: PageProps): JSX.Element {
             </div>
           </AnimatedContainer>
 
-          <div className="flex justify-center items-center bg-warning h-16 rounded-xl mb-1">Kostenlos buchen</div>
+          <div
+            data-ripple-light="true"
+            className="flex justify-center items-center none h-16 center rounded-lg bg-warning shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          >
+            Kostenlos buchen
+          </div>
           <p className="text-sm text-center text-background">(Trinkgeld basiert)</p>
         </div>
       </div>

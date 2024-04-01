@@ -130,7 +130,7 @@ export function Booking({}: PageProps): JSX.Element {
               className="h-16 bg-white w-full rounded-lg text-background text-lg p-4"
               name="email"
               value={email}
-              type="text"
+              type="email"
               onChange={handleEmailChange}
               onBlur={togglePersonFieldVisibility}
             />
